@@ -34,13 +34,14 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                echo 'Deploying the application'
-                deploy adapters: [
-                    tomcat11(
-                        credentialsId: 'tomcat-credential-id',
-                        url: 'http://localhost:9188',
-                        path: 'target/*.jar'
+        steps {
+        echo 'Deploying the application'
+        deploy adapters: [
+            tomcat11(
+                credentialsId: 'tomcat-credential-id',
+                url: 'http://localhost:9188',
+                path: 'target/*.war',
+                update: true  // Thêm dòng này để cập nhật ứng dụng đã có sẵn
                     )
                 ]
             }
