@@ -37,7 +37,7 @@ pipeline {
         steps {
         echo 'Deploying the application'
         deploy adapters: [
-            tomcat11(
+            tomcat9(
                 credentialsId: 'tomcat-credential-id',
                 url: 'http://localhost:9188',
                 path: 'target/*.war',
