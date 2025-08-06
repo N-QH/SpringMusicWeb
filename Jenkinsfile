@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project using Maven'
-                bat 'mvn clean package'
+                bat 'mvn spring-boot:run'
             }
         }
         stage('Test') {
