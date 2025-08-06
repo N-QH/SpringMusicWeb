@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         jdk 'JDK21'
-        maven 'Maven 3.9.5'
+        maven 'Maven 3.9.11'
     }
     stages {
         stage ('clone') {
